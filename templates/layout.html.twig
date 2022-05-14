@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<style>
+        table.layout {         
+            width: 100%;
+        }
+        td.layout-filtry {         
+            width: 20%;
+        }
+        td.layout-lista {         
+            width: 80%;
+        }
+
+        table.raport {
+            border: 1px solid black;
+            padding: 5px;
+            width: 700px;
+            border-collapse: collapse;
+        }
+        table.raport th {
+            border: 1px solid black;
+            padding: 5px;
+            background-color: #00ffff;
+        }
+        table.raport td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+</style>
+{% endblock %}
+
+{% block body %}
+<table class="layout">
+    <tr>
+        <td class="layout-filtry">
+        Filtry
+        </td>
+        <td class="layout-lista">
+        {% block lista %}{% endblock %}
+        </td>
+    </tr>
+</table>
+{% endblock %}

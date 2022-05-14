@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block body_id 'raport_index' %}
+
+{% block lista %}
+    <table class="raport">
+        <thead>
+            <tr>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Data</th>
+                <th scope="col">Godzina</th>
+                <th scope="col">Uzytkownik</th>
+                <th scope="col">Lokal</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eksport in eksporty %}
+            <tr>
+                <td>{{ eksport.nazwa }}</td>
+                <td>{{ eksport.data }}</td>
+                <td>{{ eksport.godzina }}</td>
+                <td>{{ eksport.uzytkownik }}</td>
+                <td>{{ eksport.lokal }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5" align="center">Brak pozycji</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="filtry">
+Filtry
+    </div>
+
+    {{ parent() }}
+
+{% endblock %}
